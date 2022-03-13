@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
   text-align: center;
+}
+
+body {
+  background-color: #F0F1F2 !important;
 }
 
 .App-logo {
@@ -35,4 +45,65 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* My defined css */
+
+.link {
+  color: gray;
+  text-decoration: none;
+}
+
+.link.active * {
+  color: white
+}
+
+.banner {
+  position: relative;
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img5.goodfon.com/wallpaper/nbig/8/74/osen-listia-fon-colorful-klen-autumn-leaves-maple-backgrou-1.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner.home {
+  height: 100vh
+}
+
+.banner .banner-info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.banner .banner-info h1 {
+  position: relative;
+  font-size: 6rem;
+  color: white;
+}
+
+a.more-link {
+  background-color: #008CBA;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+div.more-link-wrapper {
+  display: none
+}
+
+
+.card-text img {
+  width:100%
+}
+
+.card-text h1 {
+  font-size: 1.75rem;
 }
