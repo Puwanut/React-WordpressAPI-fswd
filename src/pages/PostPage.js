@@ -9,9 +9,9 @@ const PostPage = () => {
     const [post, setPost] = useState([])
 
     const getPost = async () => {
+        console.log(id)
         const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts/${id}`)
         setPost(response.data)
-        console.log(response.data)
     }
 
     useEffect(() => {

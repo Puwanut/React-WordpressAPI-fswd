@@ -15,13 +15,11 @@ const CategoryPage = () => {
     const getAllCategory = async () => {
         const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/categories`)
         setAllCategory(response.data)
-        console.log(response.data)
     }
 
     const getAllPost = async () => {
         const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts/`)
         setAllPost(response.data)
-        console.log(response.data)
     }
 
     useEffect(() => {
@@ -38,7 +36,7 @@ const CategoryPage = () => {
     }
 
     const Categories = () => {
-        if (allCategory.length !== 0) {
+        if (allCategory.length !== 0 && allPost.length !== 0) {
             return (
                 <>
                     <Banner text="Category" />

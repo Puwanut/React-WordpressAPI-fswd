@@ -10,7 +10,6 @@ const HomePage = () => {
     const getAllPost = async () => {
         const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts/`)
         setAllPost(response.data)
-        console.log(response.data)
     }
 
     useEffect(() => {

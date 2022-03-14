@@ -52,3 +52,13 @@ div.more-link-wrapper {
 .card-text h1 {
   font-size: 1.75rem;
 }
+
+.badge:hover {
+  transform: scale(1.1);
+  transition: 0.2s ;
+}
+
+.list-group-item:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
