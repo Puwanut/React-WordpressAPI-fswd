@@ -22,7 +22,7 @@ const AuthorPage = () => {
                 <>
                     <Banner text="Author" />
                     <Container style={{ marginTop: 50 }}>
-                        <Row>
+                        <Row className="justify-content-center">
                             {
                                 authors.map((author) => (
                                     <AuthorProfile key={author.id} author={author}/>

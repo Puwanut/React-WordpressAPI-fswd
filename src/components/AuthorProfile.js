@@ -7,9 +7,11 @@ const AuthorProfile = ({ author }) => {
             <Card.Img variant="top" src={author.avatar_urls[96]} />
             <Card.Body>
                 <Card.Title className="text-center">{author.name}</Card.Title>
-                <Button style={{ width: "100%"}}>
-                    <Link to={`/${author.id}`} style={{color: "white"}}>See posts</Link>
-                </Button>
+                <Link to={`/author/${author.id}`} style={{color: "white", textDecoration: "none"}}>
+                    <Button style={{ width: "100%"}}>
+                        Author's Posts
+                    </Button>
+                </Link>
             </Card.Body>
         </Card>
     )
