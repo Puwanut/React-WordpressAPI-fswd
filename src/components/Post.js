@@ -5,6 +5,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import Comment from "./Comment"
 import PostComment from "./PostComment"
+import CategoryBadge from "./CategoryBadge"
 
 const Post = ({ post, showContent }) => {
   const [user, setUser] = useState([])
@@ -31,24 +32,6 @@ const Post = ({ post, showContent }) => {
       getCategory()
       getComments()
   }, [])
-
-
-    const CategoryBadge = ({ categoryId }) => {
-      let categoryName
-      category.forEach(element => {
-        if (element.id === categoryId) {
-          categoryName = element.name
-        }
-      });
-
-      return (
-        <span>
-          <Link to={`/category#${categoryId}`}>
-            <Badge pill bg="primary" style={{ marginRight: 5, fontSize: "0.8rem"}}>{categoryName}</Badge>
-          </Link>
-        </span>
-      )
-    }
 
     const PostBox = () => {
       if (post.length !== 0){
@@ -88,7 +71,7 @@ const Post = ({ post, showContent }) => {
                       Category: &nbsp;
                       {(post.categories).map((id) => {
                           return (
-                            <CategoryBadge categoryId={id} />
+                            <CategoryBadge categoryId={id} categories={category} />
                           )
                       })}
                   </Card.Footer>
