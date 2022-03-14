@@ -24,12 +24,6 @@ const CategoryPage = () => {
         console.log(response.data)
     }
 
-    // const getPostInCategory = async (cate_id) => {
-    //     let response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts?categories=${cate_id}`)
-    //     console.log(response.data)
-    //     return response.data
-    // }
-
     useEffect(() => {
         getAllCategory()
         getAllPost()

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Comment from "./Comment"
+import PostComment from "./PostComment"
 
 const Post = ({ post, showContent }) => {
   const [user, setUser] = useState([])
@@ -30,6 +31,7 @@ const Post = ({ post, showContent }) => {
       getCategory()
       getComments()
   }, [])
+
 
     const CategoryBadge = ({ categoryId }) => {
       let categoryName
@@ -96,7 +98,8 @@ const Post = ({ post, showContent }) => {
                 <h3 style={{ textAlign: "center", margin: 0}}>{comments.length} Comments</h3>
               </Card>
 
-              {/* https://secure.gravatar.com/avatar/55502f40dc8b7c769880b10874abc9d0?s=48&d=mm&r=g */}
+              <PostComment postID={post.id}/>
+
               {
                 comments.map((comment) => (
                   <Comment key={comment.id} comment={comment}/>
