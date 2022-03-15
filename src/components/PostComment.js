@@ -33,11 +33,11 @@ const PostComment = ({ postID, reloadComments }) => {
 
                             <Card.Title>
                                 <label for="authorName">Name</label><br/>
-                                <input type="text" id="authorName" style={{ maxWidth: "100%"}}></input>
+                                <input type="text" id="authorName" style={{ maxWidth: "100%"}} placeholder="write your name..."></input>
                             </Card.Title>
                             <Card.Text>
                                 <label for="authorComment">Comment</label><br />
-                                <textarea id="authorComment" name="authorComment" rows="4" cols="100" style={{ maxWidth: "100%"}}></textarea>
+                                <textarea id="authorComment" name="authorComment" rows="4" cols="100" style={{ maxWidth: "100%"}} placeholder="write your comment..."></textarea>
                             </Card.Text>
                             <Button variant="outline-dark" onClick={sendComment}>Post comment</Button>
                     </Col>
