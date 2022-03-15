@@ -20,17 +20,13 @@ const AuthorPage = () => {
         if (authors.length !== 0){
             return (
                 <>
-                    <Banner text="Author" />
-                    <Container style={{ marginTop: 50 }}>
-                        <Row className="justify-content-center">
-                            {
-                                authors.map((author) => (
-                                    <AuthorProfile key={author.id} author={author}/>
-                                ))
-                            }
-                        </Row>
-
-                    </Container>
+                    <Row className="justify-content-center">
+                        {
+                            authors.map((author) => (
+                                <AuthorProfile key={author.id} author={author}/>
+                            ))
+                        }
+                    </Row>
                 </>
             )
         } else {
@@ -39,7 +35,13 @@ const AuthorPage = () => {
     }
 
     return (
-        <ShowAuthors />
+        <>
+            <Banner text="Author" />
+            <Container style={{ marginTop: 50 }}>
+                <ShowAuthors />
+            </Container>
+        </>
+
     )
 }
 

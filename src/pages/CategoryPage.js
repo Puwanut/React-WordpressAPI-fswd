@@ -10,7 +10,6 @@ const CategoryPage = () => {
     const [allPost, setAllPost] = useState([])
 
     const { hash } = useLocation();
-    console.log(hash)
 
     const getAllCategory = async () => {
         const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/categories`)
@@ -38,45 +37,40 @@ const CategoryPage = () => {
     const Categories = () => {
         if (allCategory.length !== 0 && allPost.length !== 0) {
             return (
-                <>
-                    <Banner text="Category" />
-                    <Container style={{ marginTop: 25 }}>
-                        <Tab.Container id="list-group-tabs-category" activeKey={defaultTab(hash)}>
-                            <Row>
-                                <Col md={3} style={{ marginTop: 25 }}>
-                                    <ListGroup>
-                                        {
-                                            allCategory.map((cate) => {
-                                                return (
-                                                    <ListGroup.Item action href={`#${cate.id}`} variant="light" key={cate.id}>
-                                                        {cate.name}
-                                                    </ListGroup.Item>
-                                                )
-                                            })
-                                        }
-                                    </ListGroup>
-                                </Col>
-                                <Col md={9} style={{ marginTop: 25 }}>
-                                <Tab.Content>
-                                        {
-                                            allCategory.map((cate) => {
-                                                return (
-                                                    <Tab.Pane eventKey={`#${cate.id}`} key={cate.id}>
-                                                        {
-                                                            allPost.filter(post => post.categories.includes(cate.id)).map((post) => (
-                                                                <Post key={post.id} post={post} showContent="excerpt"/>
-                                                            ))
-                                                        }
-                                                    </Tab.Pane>
-                                                )
-                                            })
-                                        }
-                                </Tab.Content>
-                                </Col>
-                            </Row>
-                        </Tab.Container>
-                    </Container>
-                </>
+                <Tab.Container id="list-group-tabs-category" activeKey={defaultTab(hash)}>
+                    <Row>
+                        <Col md={3} style={{ marginTop: 25 }}>
+                            <ListGroup>
+                                {
+                                    allCategory.map((cate) => {
+                                        return (
+                                            <ListGroup.Item action href={`#${cate.id}`} variant="light" key={cate.id}>
+                                                {cate.name}
+                                            </ListGroup.Item>
+                                        )
+                                    })
+                                }
+                            </ListGroup>
+                        </Col>
+                        <Col md={9} style={{ marginTop: 25 }}>
+                        <Tab.Content>
+                                {
+                                    allCategory.map((cate) => {
+                                        return (
+                                            <Tab.Pane eventKey={`#${cate.id}`} key={cate.id}>
+                                                {
+                                                    allPost.filter(post => post.categories.includes(cate.id)).map((post) => (
+                                                        <Post key={post.id} post={post} showContent="excerpt"/>
+                                                    ))
+                                                }
+                                            </Tab.Pane>
+                                        )
+                                    })
+                                }
+                        </Tab.Content>
+                        </Col>
+                    </Row>
+                </Tab.Container>
             )
         } else {
             return <></>
@@ -84,7 +78,13 @@ const CategoryPage = () => {
     }
 
     return (
-        <Categories />
+        <>
+            <Banner text="Category" />
+            <Container style={{ marginTop: 25 }}>
+                <Categories />
+            </Container>
+        </>
+
     )
 }
 
