@@ -8,7 +8,7 @@ const HomePage = () => {
     const [allPost, setAllPost] = useState([])
 
     const getAllPost = async () => {
-        const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts/`)
+        const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts?per_page=100`)
         setAllPost(response.data)
     }
 

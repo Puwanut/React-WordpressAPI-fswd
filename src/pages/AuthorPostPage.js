@@ -11,7 +11,7 @@ const AuthorPostPage = () => {
     const [author, setAuthor] = useState([])
 
     const getPosts = async () => {
-        const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts?author=${id}`)
+        const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/posts?author=${id}&per_page=100`)
         setPosts(response.data)
     }
 

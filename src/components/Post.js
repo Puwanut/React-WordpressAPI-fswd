@@ -23,9 +23,9 @@ const Post = ({ post, showContent }) => {
   }
 
   const getComments = async () => {
-    const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments?post=${post.id}&per_page=100`)
-    setComments(response.data)
-}
+      const response = await axios.get(`https://fswd-wp.devnss.com/wp-json/wp/v2/comments?post=${post.id}&per_page=100`)
+      setComments(response.data)
+  }
 
   useEffect(() => {
       getUser()
@@ -34,7 +34,6 @@ const Post = ({ post, showContent }) => {
         getComments()
       }
   }, [])
-
 
     const PostBox = () => {
       if (post.length !== 0){
