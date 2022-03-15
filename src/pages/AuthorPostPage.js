@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import { Card, Col, Container, Row } from "react-bootstrap"
 import { Link, useParams } from "react-router-dom"
 import Banner from "../components/Banner"
 import Post from "../components/Post"
@@ -32,6 +32,9 @@ const AuthorPostPage = () => {
                     <Banner text={`${author.name}'s Posts`} />
                     <Container style={{ marginTop: 50 }}>
                         <Link to="/author">&lt;&lt; Back to Authors Page</Link>
+                        <Card className="mt-3 mb-3 p-2">
+                            <h3 style={{ textAlign: "center", margin: 0}}>{posts.length} Posts</h3>
+                        </Card>
                         <Row className="mt-3">
                             <Col md={12} >
                                 {
