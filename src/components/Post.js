@@ -60,7 +60,7 @@ const Post = ({ post, showContent }) => {
                   <Card.Body style={{ margin: "3vh 5vw"}}>
                       <Card.Title style={{ textAlign: "center", fontSize: "3em"}}>{ post.title.rendered }</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted text-center">
-                          Published by <Link to={"/author/" + post.id}>{ user.name }</Link> on { post.date.replace('T', ' ') }
+                          Published by <Link to={`/author/${post.author}`}>{ user.name }</Link> on { post.date.replace('T', ' ') }
                       </Card.Subtitle>
                       <Card.Text className="mt-4">
                         { parser(post.content.rendered) }
@@ -81,18 +81,16 @@ const Post = ({ post, showContent }) => {
                 <h3 style={{ textAlign: "center", margin: 0}}>{comments.length} Comments</h3>
               </Card>
 
-              <PostComment postID={post.id}/>
+              <PostComment postID={post.id} reloadComments={getComments}/>
 
               {
                 comments.map((comment) => (
                   <Comment key={comment.id} comment={comment}/>
                 ))
               }
-
             </>
           )
         }
-
       } else {
         return <></>
       }
