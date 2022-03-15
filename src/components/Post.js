@@ -30,8 +30,11 @@ const Post = ({ post, showContent }) => {
   useEffect(() => {
       getUser()
       getCategory()
-      getComments()
+      if (showContent === "content") {
+        getComments()
+      }
   }, [])
+
 
     const PostBox = () => {
       if (post.length !== 0){
