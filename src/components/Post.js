@@ -1,4 +1,4 @@
-import { Badge, Button, Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
 import parser from 'html-react-parser'
 import { Link } from 'react-router-dom'
 import axios from "axios"
