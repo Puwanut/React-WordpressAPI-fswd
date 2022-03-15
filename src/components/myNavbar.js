@@ -5,7 +5,7 @@ const MyNavbar = () => {
     return (
         <Navbar className='justify-content-between' bg="dark" variant='dark' expand="lg" fixed="top">
             <Container>
-                <Link to="/" className='navbar-brand'>Peppon</Link>
+                <Link to="/" className='navbar-brand'>FSWD-WP</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
